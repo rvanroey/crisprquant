@@ -57,7 +57,7 @@ def check_samplesheet(file_in, file_out):
         ## Check header
         MIN_COLS = 3
         # TODO nf-core: Update the column names for the input samplesheet
-        HEADER = ["group", "replicate", "fastq"]
+        HEADER = ["group", "replicate", "fastq_1"] #fixed error in the beginning (still need to implement fastq_1 in the excel sheet)
         header = [x.strip('"') for x in fin.readline().strip().split(",")]
         if header[: len(HEADER)] != HEADER:
             print("ERROR: Please check samplesheet header -> {} != {}".format(",".join(header), ",".join(HEADER)))
